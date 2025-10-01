@@ -28,7 +28,9 @@
 </head>
 <body>
   <a id="top" tabindex="-1"></a>
-  <button class="js-skip-link vh vv:f posa z11 bgc-diesel p10 bd2-s-red">Skip to main content</button>
+  <a tabindex="0" class="js-skip-link posa l-100vw l0:f z11 bgc-diesel p10 c-red bd2-s-red">
+    Skip to main content
+  </a>
   <header class="js-header posf w100% bgc-diesel trs-top-0.3s-eio z10">
     <div class="container df jcsb aic">
       <a href="#top" aria-labelledby="Pro Musica Audio Specialists" aria-describedby="Pro Musica Audio Specialists" role="link">
@@ -48,19 +50,19 @@
         </label>
         <nav class="posa@900 t100%@900 w100%@900 bgc-diesel@900 l0@900">
           <ul class="fw900 df fxdrc@900 w100%@900">
-            <li class="w100%@900 bgc-temptress:h@900"><a class="db@900" href="#our-story">our story</a></li>
-            <li class="w100%@900 bgc-temptress:h@900"><a class="db@900" href="#services">services</a></li>
-            <li class="w100%@900 bgc-temptress:h@900"><a class="db@900" href="#brands">brands</a></li>
-            <li class="w100%@900 bgc-temptress:h@900"><a class="db@900" href="#location-and-hours">location and hours</a></li>
+            <li class="js-menu-item w100%@900 bgc-temptress:h@900"><a class="db@900" href="#our-story">our story</a></li>
+            <li class="js-menu-item w100%@900 bgc-temptress:h@900"><a class="db@900" href="#services">services</a></li>
+            <li class="js-menu-item w100%@900 bgc-temptress:h@900"><a class="db@900" href="#brands">brands</a></li>
+            <li class="js-menu-item w100%@900 bgc-temptress:h@900"><a class="db@900" href="#location-and-hours">location and hours</a></li>
           </ul>
         </nav>
       </div>
     </div>
   </header>
-  <a id="post-header"></a>
+  <a tabindex="0" id="post-header"></a>
   <main>
     <div class="spacer h60"></div>
-    <a id="introduction"></a>
+    <a tabindex="0" id="introduction"></a>
     <div class="h100vh h-auto@900">
       <div class="posr oh mb40 h-calc(80vh-60px) h-calc(70vh-60px)@1400 mih400 h-auto@900">
         <img
@@ -83,7 +85,7 @@
       </section>
     </div>
     <section class="wide">
-      <a id="our-story"></a>
+      <a tabindex="0" id="our-story"></a>
       <h2 class="mb20">our story</h2>
       <div class="df jcsb aifs g20">
         <div>
@@ -130,7 +132,7 @@
       <p>Try out different components, combinations, and ideas. Let us help you build the best audio system you've ever heard.</p>
     </section>
     <section>
-      <a id="brands"></a>
+      <a tabindex="0" id="brands"></a>
       <h2 class="mb20">brands</h2>
       <div class="df jcsb ml20 w70% w100%@650 db@500">
         <div>
@@ -166,7 +168,7 @@
       </div>
     </section>
     <section>
-      <a id="location-and-hours"></a>
+      <a tabindex="0" id="location-and-hours"></a>
       <h2 class="mb20">location and hours</h2>
       <ul aria-label="store hours and days of operation">
         <li><span class="fw900">Tuesday:</span> 12 PM - 5 PM</li>
@@ -199,6 +201,15 @@
     </div>
   </footer>
   <script>
+    // when a menu item is clicked, close the menu
+    const menuToggleCheckbox = document.querySelector('.open-close-toggle');
+    const menuItems = document.querySelectorAll('.js-menu-item');
+    menuItems.forEach(item => {
+      item.addEventListener('click', () => {
+        menuToggleCheckbox.checked = false;
+      });
+    });
+    
     // Update the year dynamically
     document.querySelector('.js-date-year').textContent = new Date().getFullYear();
     
@@ -230,11 +241,17 @@
 
     // Skip link functionality
     const skipLink = document.querySelector('.js-skip-link')
-    skipLink.addEventListener('click', function(e) {
+    const skipLinkMethod = (e) => {
       e.preventDefault();
       const target = document.querySelector('#post-header');
       target.scrollIntoView({ behavior: 'smooth' });
       target.focus();
+    }
+    skipLink.addEventListener('click', skipLinkMethod);
+    skipLink.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        skipLinkMethod(e);
+      }
     });
   </script>
 </body>

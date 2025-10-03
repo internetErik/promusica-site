@@ -203,6 +203,21 @@ a:hover {
 }
 
 @media all and (max-width: 500px) {
+  h1, .h1 {
+    font-size: 2.369rem;
+    line-height: 1.1;
+  }
+  h2, .h2 {
+    font-size: 1.777rem;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+  h3, .h3 {
+    font-size: 1.333rem;
+  }
+  h4, .h4 {
+    font-size: 1.111rem;
+  }
   section {
     padding: 0 20px;
   }
@@ -216,6 +231,7 @@ a:hover {
 .vv\:f:focus {visibility: visible}
 .df {display: flex}
 .jcsb {justify-content: space-between}
+.jcc {justify-content: center}
 .aic {align-items: center}
 .aifs {align-items: flex-start}
 .fxdrcr {flex-direction: column-reverse}
@@ -258,6 +274,7 @@ a:hover {
 @media all and (max-width: 900px) {
   .dn\@900 {display: none}
   .db\@900 {display: block}
+  .df\@900 {display: flex}
   .posa\@900 {position: absolute}
   .posr\@900 {position: relative}
   .t100\%\@900 {top: 100%}
@@ -269,6 +286,8 @@ a:hover {
   .fxdrc\@900 {flex-direction: column}
   .bgc-diesel\@900 {background-color: #1a0000}
   .bgc-temptress\:h\@900:hover {background-color: #400000}
+  .h44px\@900 {height: 44px}
+  .mb20\@900 {margin-bottom: 20px}
 }
 
 @media all and (max-width: 700px) {
@@ -282,4 +301,7 @@ a:hover {
 @media all and (max-width: 500px) {
   .posr\@500 {position: relative}
   .db\@500 {display: block}
+  .mih-auto\@500 {min-height: auto}
+  .mt20\@500 {margin-top: 20px}
+  .mb0\@500 {margin-bottom: 0}
 }

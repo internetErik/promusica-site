@@ -147,7 +147,8 @@ nav ul {
   gap: 20px;
 }
 nav a {
-  font-weight: 800;
+  font-weight: 600;
+  font-size: 18px;
 }
 ol > li {
   margin-bottom: 10px;
@@ -237,6 +238,7 @@ a:hover {
 .fxdrcr {flex-direction: column-reverse}
 .fxdrrr {flex-direction: row-reverse}
 .g20 {gap: 20px}
+.g50 {gap: 50px}
 .posf {position: fixed}
 .oh {overflow: hidden}
 .w100\% {width: 100%}
@@ -254,6 +256,7 @@ a:hover {
 .h60 {height: 60px}
 .h100vh {height: 100vh}
 .mih400 {min-height: 400px}
+.mih600 {min-height: 600px}
 .t0 {top: 0}
 .b0 {bottom: 0}
 .l0 {left: 0}
@@ -283,6 +286,7 @@ a:hover {
   .w-auto\@900 {width:auto}
   .h-auto\@900 {height:auto}
   .df\@900 {display: flex}
+  .g10\@900 {gap: 10px}
   .fxdrc\@900 {flex-direction: column}
   .bgc-diesel\@900 {background-color: #1a0000}
   .bgc-temptress\:h\@900:hover {background-color: #400000}
